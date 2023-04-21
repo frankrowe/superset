@@ -17,5 +17,11 @@
  * under the License.
  */
 
+import { SupersetPluginChartOpenlayers } from 'superset-plugin-chart-openlayers';
+
 // For individual deployments to add custom overrides
-export default function setupPluginsExtra() {}
+export default function setupPluginsExtra() {
+  new SupersetPluginChartOpenlayers()
+    .configure({ key: 'openlayers' })
+    .register();
+}
